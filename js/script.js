@@ -37,6 +37,7 @@ function validateguess(guessnum) {
 function checkguess(guessnum) {
     if (random === guessnum) {
         displaymessage('Your guess is correct')
+        endgame()
     }
     else if (guessnum > random) {
         displaymessage("Your guess is higher.")
@@ -71,6 +72,7 @@ function newgame(){
       Previousguess=[]
       numguess=1
       guesses.innerHTML=''
+      loworhi.innerHTML=''
       remainguesses.innerHTML = `${11 - numguess}`
       submit.removeAttribute('disabled')
       guessvalue.removeAttribute('disabled')
